@@ -46,3 +46,41 @@ body{
     background-size: cover;
 }
 /*TRABAJO FINALIZADO 28/01/2022 POR MANUEL FLORIDO*/
+
+#formulario{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+}
+
+.reserva{
+    background-color: rgb(118, 202, 250);
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(118, 202, 250);
+    width: 50%;
+}
+
+table caption{
+    background-color: rgb(118, 202, 250);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+.titulo{
+    font-weight: bold;
+}

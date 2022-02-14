@@ -4,30 +4,144 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reserva.css">
+    <link rel="stylesheet" href="index.css">
     <title>Reserva de Vuelo</title>
 </head>
 <body>
-    <form method="post" target="_self" action="reserva.php">
+    <form method="post" target="_self" action="reserva.php" id="formulario">
         <fieldset>
         <legend>Reserva de Vuelo</legend><br>
-            <label>Nombre → </label><input type="text" name="nombre" placeholder="Escriba aquí"/>
-            <label>Apellidos → </label><input type="text" name="apellidos" placeholder="Escriba aquí"/>
-            <label>DNI → </label><input type="text" name="dni" placeholder="Escriba aquí" maxlength="9"/>
-            <label>Correo Electrónico → </label><input type="text" name="correo" placeholder="Escriba aquí"/>
+            <label class="reserva">Nombre →  </label><input type="text" name="nombre" placeholder="Escriba aquí"/>
+            <label class="reserva">Apellidos →  </label><input type="text" name="apellidos" placeholder="Escriba aquí"/>
+            <label class="reserva">DNI →  </label><input type="text" name="dni" placeholder="XXXXXXXX?" maxlength="9"/>
+            <label class="reserva">Correo Electrónico →  </label><input type="text" name="correo" placeholder="Escriba aquí"/>
             <br>
             <br>
-            <label>Código de Descuento → </label><input type="text" name="codigo" placeholder="Escriba aquí"/>
-            <label>Cantidad a Depositar → </label><input type="text" name="pago" placeholder="Escriba aquí"/>
-            <label>¿Factura Maleta?:</label>
-                <select name="operacion">
+            <label class="reserva">Código de Descuento →  </label><input type="text" name="codigo" placeholder="Escriba aquí"/>
+            <label class="reserva">¿Factura Maleta?:</label>
+                <select name="descuento">
                     <option hidden selected>Coste 40€</option>
                     <option value="No">No</option>
                     <option value="Si">Si</option>
                 </select>
+            <br>
+            <br>
+            <label class="reserva">Elija un avión:</label>
+                <select name="vuelo">
+                    <option hidden selected>Selecciona una opción</option>
+                    <option value="Vueling-AE12-Milán">Vueling-AE12-Milán</option>
+                    <option value="Volotea-EA21-Roma">Volotea-EA21-Roma</option>
+                    <option value="Iberia-WE44-Estambul">Iberia-WE44-Estambul</option>
+                    <option value="Ryanair-EW44-Madrid">Ryanair-EW44-Madrid</option>
+                    <option value="Vueling-ZK87-Lima">Vueling-ZK87-Lima</option>
+                    <option value="Volotea-UA21-Milán">Volotea-UA21-Milán</option>
+                    <option value="Iberia-WH44-Roma">Iberia-WH44-Roma</option>
+                    <option value="Ryanair-EL00-Madrid">Ryanair-EL00-Madrid</option>
+                    <option value="Vueling-AE12-Roma">Vueling-AE12-Roma</option>
+                    <option value="Volotea-EA21-Milán">Volotea-EA21-Milán</option>
+                    <option value="Iberia-WE44-New York">Iberia-WE44-New York</option>
+                    <option value="Ryanair-EW44-Tokio">Ryanair-EW44-Tokio</option>
+                    <option value="Vueling-ZK87-Chicago">Vueling-ZK87-Chicago</option>
+                    <option value="Volotea-UA21-París">Volotea-UA21-París</option>
+                    <option value="Iberia-WH44-Oporto">Iberia-WH44-Oporto</option>
+                    <option value="Ryanair-EL00-Los Ángeles">Ryanair-EL00-Los Ángeles</option>
+                </select>
+            <label class="reserva">Cantidad a Depositar →  </label><input type="text" name="pago" placeholder="Escriba aquí"/>
+            <br>
+            <br>
+            <table>
+                <caption>Tabla de Precios</caption>
+                <tr>
+                    <td class="titulo">Vuelo</td>
+                    <td class="titulo">Destino</td>
+                    <td class="titulo">Precio</td>
+                </tr>
+                <tr>
+                    <td>Vueling-AE12</td>
+                    <td>Milán</td>
+                    <td>120€</td>
+                </tr>
+                <tr>
+                    <td>Volotea-EA21</td>
+                    <td>Roma</td>
+                    <td>90€</td>
+                </tr>
+                <tr>
+                    <td>Iberia-WE44</td>
+                    <td>Estambul</td>
+                    <td>200€</td>
+                </tr>
+                <tr>
+                    <td>Ryanair-EW44</td>
+                    <td>Madrid</td>
+                    <td>50€</td>
+                </tr>
+                <tr>
+                    <td>Vueling-ZK87</td>
+                    <td>Lima</td>
+                    <td>1000€</td>
+                </tr>
+                <tr>
+                    <td>Volotea-UA21</td>
+                    <td>Milán</td>
+                    <td>70€</td>
+                </tr>
+                <tr>
+                    <td>Iberia-WH44</td>
+                    <td>Roma</td>
+                    <td>95€</td>
+                </tr>
+                <tr>
+                    <td>Ryanair-EL00</td>
+                    <td>Madrid</td>
+                    <td>80€</td>
+                </tr>
+
+                <tr>
+                    <td>Vueling-AE12</td>
+                    <td>Roma</td>
+                    <td>65€</td>
+                </tr>
+                <tr>
+                    <td>Volotea-EA21</td>
+                    <td>Milán</td>
+                    <td>77€</td>
+                </tr>
+                <tr>
+                    <td>Iberia-WE44</td>
+                    <td>New York</td>
+                    <td>1200€</td>
+                </tr>
+                <tr>
+                    <td>Ryanair-EW44</td>
+                    <td>Tokio</td>
+                    <td>1100€</td>
+                </tr>
+                <tr>
+                    <td>Vueling-ZK87</td>
+                    <td>Chicago</td>
+                    <td>1500€</td>
+                </tr>
+                <tr>
+                    <td>Volotea-UA21</td>
+                    <td>París</td>
+                    <td>200€</td>
+                </tr>
+                <tr>
+                    <td>Iberia-WH44</td>
+                    <td>Oporto</td>
+                    <td>45€</td>
+                </tr>
+                <tr>
+                    <td>Ryanair-EL00</td>
+                    <td>Los Ángeles</td>
+                    <td>1700€</td>
+                </tr>
+            </table>
         <br>
         <br>
-            <label><input class="resolv" type="submit" name="resolver" value="Resolver"/></label>
+            <label><input type="submit" name="resolver" value="Enviar"/></label>
+            <label><input type="reset" name="reset" value="Borrar Todo"/></label>
         </fieldset><br>
 </body>
 </html>
