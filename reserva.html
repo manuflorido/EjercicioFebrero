@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reserva.css">
+    <title>Reserva de Vuelo</title>
+</head>
+<body>
+    <form method="post" target="_self" action="reserva.php">
+        <fieldset>
+        <legend>Reserva de Vuelo</legend><br>
+            <label>Nombre → </label><input type="text" name="nombre" placeholder="Escriba aquí"/>
+            <label>Apellidos → </label><input type="text" name="apellidos" placeholder="Escriba aquí"/>
+            <label>DNI → </label><input type="text" name="dni" placeholder="Escriba aquí" maxlength="9"/>
+            <label>Correo Electrónico → </label><input type="text" name="correo" placeholder="Escriba aquí"/>
+            <br>
+            <br>
+            <label>Código de Descuento → </label><input type="text" name="codigo" placeholder="Escriba aquí"/>
+            <label>Cantidad a Depositar → </label><input type="text" name="pago" placeholder="Escriba aquí"/>
+            <label>¿Factura Maleta?:</label>
+                <select name="operacion">
+                    <option hidden selected>Coste 40€</option>
+                    <option value="No">No</option>
+                    <option value="Si">Si</option>
+                </select>
+        <br>
+        <br>
+            <label><input class="resolv" type="submit" name="resolver" value="Resolver"/></label>
+        </fieldset><br>
+</body>
+</html>
