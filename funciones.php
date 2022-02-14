@@ -89,6 +89,12 @@ function sumCiu($vueloDestino){
     $cuentaLim=0;
     $cuentaEsta=0;
     $cuentaBil=0;
+    $cuentaNY=0;
+    $cuentaTokio=0;
+    $cuentaChic=0;
+    $cuentaPar=0;
+    $cuentaOpo=0;
+    $cuentaLA=0;
 foreach ($vueloDestino as $destino) {
     $ciudad=$destino["Destino"];
     if ($ciudad=='Roma') {
@@ -109,6 +115,24 @@ foreach ($vueloDestino as $destino) {
     if ($ciudad=='Bilbao') {
         $cuentaBil++;
     }
+    if ($ciudad=='New York') {
+        $cuentaNY++;
+    }
+    if ($ciudad=='Tokio') {
+        $cuentaTokio++;
+    }
+    if ($ciudad=='Chicago') {
+        $cuentaChic++;
+    }
+    if ($ciudad=='París') {
+        $cuentaPar++;
+    }
+    if ($ciudad=='Oporto') {
+        $cuentaOpo++;
+    }
+    if ($ciudad=='Los Ángeles') {
+        $cuentaLA++;
+    }
 }
 echo "Veces visitadas cada ciudad: " . "<br>";
     echo "Roma: " . $cuentaRoma . "<br>";
@@ -117,6 +141,12 @@ echo "Veces visitadas cada ciudad: " . "<br>";
     echo "Madrid: " . $cuentaMad . "<br>";
     echo "Lima: " . $cuentaLim . "<br>";
     echo "Bilbao: " . $cuentaBil . "<br>";
+    echo "New York: " . $cuentaNY . "<br>";
+    echo "Tokio: " . $cuentaTokio . "<br>";
+    echo "Chicago: " . $cuentaChic . "<br>";
+    echo "París: " . $cuentaPar . "<br>";
+    echo "Oporto: " . $cuentaOpo . "<br>";
+    echo "Los Ángeles: " . $cuentaLA . "<br>";
 
 //He tenido que juntar estas dos para poder usar las variables $cuenta
 
@@ -127,7 +157,13 @@ $ciudades=array(
     array("Numero" => $cuentaEsta, "Ciudad" => "Estambul" ),
     array("Numero" => $cuentaMad, "Ciudad" => "Madrid" ),
     array("Numero" => $cuentaLim, "Ciudad" => "Lima" ),
-    array("Numero" => $cuentaBil, "Ciudad" => "Bilbao" )
+    array("Numero" => $cuentaBil, "Ciudad" => "Bilbao" ),
+    array("Numero" => $cuentaNY, "Ciudad" => "New York" ),
+    array("Numero" => $cuentaTokio, "Ciudad" => "Tokio" ),
+    array("Numero" => $cuentaChic, "Ciudad" => "Chicago" ),
+    array("Numero" => $cuentaPar, "Ciudad" => "París" ),
+    array("Numero" => $cuentaOpo, "Ciudad" => "Oporto" ),
+    array("Numero" => $cuentaLA, "Ciudad" => "Los Ángeles" )
 );
 
 //Ordenas el array según el número de veces que se ha ido
@@ -141,7 +177,7 @@ echo $maxVisit . "<br>";
 
 //Divides el array para mostrar las últimas 3 ciudades
 echo "Las ciudades menos visitadas son: ";
-$minVisit = array_slice($ciudades,2);
+$minVisit = array_slice($ciudades,9);
 foreach ($minVisit as $minimo) {
     $minCiu=$minimo["Ciudad"];
     echo $minCiu . "//";
@@ -198,6 +234,12 @@ function maxCiu($vueloDestino){
     $cuentaLim=0;
     $cuentaEsta=0;
     $cuentaBil=0;
+    $cuentaNY=0;
+    $cuentaTokio=0;
+    $cuentaChic=0;
+    $cuentaPar=0;
+    $cuentaOpo=0;
+    $cuentaLA=0;
 foreach ($vueloDestino as $destino) {
     $ciudad=$destino["Destino"];
     if ($ciudad=='Roma') {
@@ -218,6 +260,24 @@ foreach ($vueloDestino as $destino) {
     if ($ciudad=='Bilbao') {
         $cuentaBil++;
     }
+    if ($ciudad=='New York') {
+        $cuentaNY++;
+    }
+    if ($ciudad=='Tokio') {
+        $cuentaTokio++;
+    }
+    if ($ciudad=='Chicago') {
+        $cuentaChic++;
+    }
+    if ($ciudad=='París') {
+        $cuentaPar++;
+    }
+    if ($ciudad=='Oporto') {
+        $cuentaOpo++;
+    }
+    if ($ciudad=='Los Ángeles') {
+        $cuentaLA++;
+    }
 }
 
 $ciudades=array(
@@ -226,7 +286,13 @@ $ciudades=array(
     array("Numero" => $cuentaEsta, "Ciudad" => "Estambul" ),
     array("Numero" => $cuentaMad, "Ciudad" => "Madrid" ),
     array("Numero" => $cuentaLim, "Ciudad" => "Lima" ),
-    array("Numero" => $cuentaBil, "Ciudad" => "Bilbao" )
+    array("Numero" => $cuentaBil, "Ciudad" => "Bilbao" ),
+    array("Numero" => $cuentaNY, "Ciudad" => "New York" ),
+    array("Numero" => $cuentaTokio, "Ciudad" => "Tokio" ),
+    array("Numero" => $cuentaChic, "Ciudad" => "Chicago" ),
+    array("Numero" => $cuentaPar, "Ciudad" => "París" ),
+    array("Numero" => $cuentaOpo, "Ciudad" => "Oporto" ),
+    array("Numero" => $cuentaLA, "Ciudad" => "Los Ángeles" )
 );
 
 rsort($ciudades);

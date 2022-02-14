@@ -14,7 +14,7 @@ $vueloDestino=array(
     array("Avion" => "Iberia-WE44","Destino" => "New York" ),
     array("Avion" => "Ryanair-EW44","Destino" => "Tokio" ),
     array("Avion" => "Vueling-ZK87","Destino" => "Chicago" ),
-    array("Avion" => "Volotea-UA21","Destino" => "Paris" ),
+    array("Avion" => "Volotea-UA21","Destino" => "París" ),
     array("Avion" => "Iberia-WH44","Destino" => "Oporto" ),
     array("Avion" => "Ryanair-EL00","Destino" => "Los Ángeles" )
 );
