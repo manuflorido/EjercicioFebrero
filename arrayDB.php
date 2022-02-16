@@ -116,22 +116,22 @@ $vueloAeropuerto=array(
 );
 
 $vueloPrecio=array(
-    array("Avion" => "Vueling-AE12","Precio" => "120","Destino" => "Milán" ),
-    array("Avion" => "Volotea-EA21","Precio" => "90","Destino" => "Roma" ),
-    array("Avion" => "Iberia-WE44","Precio" => "200","Destino" => "Estambul" ),
-    array("Avion" => "Ryanair-EW44","Precio" => "50","Destino" => "Madrid" ),
-    array("Avion" => "Vueling-ZK87","Precio" => "1000","Destino" => "Lima" ),
-    array("Avion" => "Volotea-UA21","Precio" => "70","Destino" => "Bilbao" ),
-    array("Avion" => "Iberia-WH44","Precio" => "95","Destino" => "Roma" ),
-    array("Avion" => "Ryanair-EL00","Precio" => "80","Destino" => "Madrid" ),
-    array("Avion" => "Vueling-AE12","Precio" => "65","Destino" => "Roma" ),
-    array("Avion" => "Volotea-EA21","Precio" => "77","Destino" => "Milán" ),
-    array("Avion" => "Iberia-WE44","Precio" => "1200","Destino" => "New York" ),
-    array("Avion" => "Ryanair-EW44","Precio" => "1100","Destino" => "Tokio" ),
-    array("Avion" => "Vueling-ZK87","Precio" => "1500","Destino" => "Chicago" ),
-    array("Avion" => "Volotea-UA21","Precio" => "200","Destino" => "París" ),
-    array("Avion" => "Iberia-WH44","Precio" => "45","Destino" => "Oporto" ),
-    array("Avion" => "Ryanair-EL00","Precio" => "1700","Destino" => "Los Ángeles" )
+    array("Avion" => "Vueling-AE12-Milán","Precio" => "120","Destino" => "Milán" ),
+    array("Avion" => "Volotea-EA21-Roma","Precio" => "90","Destino" => "Roma" ),
+    array("Avion" => "Iberia-WE44-Estambul","Precio" => "200","Destino" => "Estambul" ),
+    array("Avion" => "Ryanair-EW44-Madrid","Precio" => "50","Destino" => "Madrid" ),
+    array("Avion" => "Vueling-ZK87-Lima","Precio" => "1000","Destino" => "Lima" ),
+    array("Avion" => "Volotea-UA21-Milán","Precio" => "70","Destino" => "Bilbao" ),
+    array("Avion" => "Iberia-WH44-Roma","Precio" => "95","Destino" => "Roma" ),
+    array("Avion" => "Ryanair-EL00-Madrid","Precio" => "80","Destino" => "Madrid" ),
+    array("Avion" => "Vueling-AE12-Roma","Precio" => "65","Destino" => "Roma" ),
+    array("Avion" => "Volotea-EA21-Milán","Precio" => "77","Destino" => "Milán" ),
+    array("Avion" => "Iberia-WE44-New York","Precio" => "1200","Destino" => "New York" ),
+    array("Avion" => "Ryanair-EW44-Tokio","Precio" => "1100","Destino" => "Tokio" ),
+    array("Avion" => "Vueling-ZK87-Chicago","Precio" => "1500","Destino" => "Chicago" ),
+    array("Avion" => "Volotea-UA21-París","Precio" => "200","Destino" => "París" ),
+    array("Avion" => "Iberia-WH44-Oporto","Precio" => "45","Destino" => "Oporto" ),
+    array("Avion" => "Ryanair-EL00-Los Ángeles","Precio" => "1700","Destino" => "Los Ángeles" )
 );
 
 ?>

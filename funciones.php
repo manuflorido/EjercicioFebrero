@@ -355,4 +355,48 @@ function totalPasajerosAvion($vueloPasajeros, $id){
     echo "Total de pasajeros: " . $numero . " pasajeros <br>";
     }
 //TRABAJO FINALIZADO 28/01/2022 POR MANUEL FLORIDO
+
+//Empiezo trabajo Febrero
+
+//FUNCIÓN PARA VALIDAR EL PRECIO
+function validaPrecio($vueloPrecio, $dinero, $id){
+    foreach ($vueloPrecio as $preciovuelo) {
+        $avion=$preciovuelo["Avion"];
+        $precio=$preciovuelo["Precio"];
+//Añadimos el IVA al precio del Vuelo
+        $precio=$precio*1.21;
+//COMPARA EL AVION
+        if ($avion==$id){
+//COMPARA SI EL DINERO ES EXACTO
+                if ($precio==$dinero) {
+                    echo "El dinero introducido es exacto" . "<br>";
+                }
+//SI SOBRA DINERO
+                if ($precio<$dinero) {
+                    $sobra=$dinero-$precio;
+                    echo "Se devolverán: " . $sobra . "€<br>";
+                }
+//SI FALTA DINERO
+                elseif ($precio>$dinero) {
+                    $falta=$precio-$dinero;
+                    echo "El dinero no es suficiente, falta: " . $falta . "€<br>";
+                }
+            }
+        }
+    }
+
+//FUNCIÓN PARA SABER SI TIENE MALETA FACTURADA
+function maleta($maleta){
+    if ($maleta == "Si") {
+        echo "Se le sumarán 40€ al importe del billete";
+    } else {
+        echo "No se le aplicará ningún cargo por maleta"
+    }
+    
+}
+
+
+    
+
+
 ?>
