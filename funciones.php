@@ -359,7 +359,7 @@ function totalPasajerosAvion($vueloPasajeros, $id){
 //Empiezo trabajo Febrero
 
 //FUNCIÓN PARA VALIDAR EL PRECIO
-function validaPrecio($vueloPrecio, $dinero, $id){
+function validaPrecio($vueloPrecio, $dinero, $id, $maleta){
     foreach ($vueloPrecio as $preciovuelo) {
         $avion=$preciovuelo["Avion"];
         $precio=$preciovuelo["Precio"];
@@ -370,31 +370,52 @@ function validaPrecio($vueloPrecio, $dinero, $id){
 //COMPARA SI EL DINERO ES EXACTO
                 if ($precio==$dinero) {
                     echo "El dinero introducido es exacto" . "<br>";
+//SUMAR EL VALOR DE LA MALETA AL TOTAL
+                    if ($maleta == "Si") {
+                        echo "Se le sumarán 40€ al importe del billete por facturar su maleta" . "<br>";
+                        echo "Se aplicará un cargo de: " . $precio+40 . "€ a su cuenta bancaria" . "<br>";
+                    } else {
+                        echo "No se le aplicará ningún cargo por maleta" . "<br>";
+                    }
                 }
 //SI SOBRA DINERO
                 if ($precio<$dinero) {
                     $sobra=$dinero-$precio;
-                    echo "Se devolverán: " . $sobra . "€<br>";
+                    echo "El dinero introducido es mayor al precio del vuelo, se devolverán: " . $sobra . "€ a su cuenta<br>";
+//SUMAR EL VALOR DE LA MALETA AL TOTAL
+                    if ($maleta == "Si") {
+                        echo "Se le sumarán 40€ al importe del billete por facturar su maleta" . "<br>";
+                        echo "Se aplicará un cargo de: " . $precio+40 . "€ a su cuenta bancaria" . "<br>";
+                    } else {
+                        echo "No se le aplicará ningún cargo por maleta" . "<br>";
+                    }
                 }
 //SI FALTA DINERO
                 elseif ($precio>$dinero) {
                     $falta=$precio-$dinero;
-                    echo "El dinero no es suficiente, falta: " . $falta . "€<br>";
+                    echo "El dinero no es suficiente, faltan: " . $falta . "€<br>";
+//SUMAR EL VALOR DE LA MALETA AL TOTAL
+                    if ($maleta == "Si") {
+                        echo "Se le sumarán 40€ al importe del billete por facturar su maleta" . "<br>";
+                        echo "Se aplicará un cargo de: " . $precio+40 . "€ a su cuenta bancaria" . "<br>";
+                    } else {
+                        echo "No se le aplicará ningún cargo por maleta" . "<br>";
+                    }
                 }
             }
         }
     }
 
-//FUNCIÓN PARA SABER SI TIENE MALETA FACTURADA
-function maleta($maleta){
+//CREAR NÚMERO DEL TICKET
+function numID($maleta){
     if ($maleta == "Si") {
-        echo "Se le sumarán 40€ al importe del billete";
-    } else {
-        echo "No se le aplicará ningún cargo por maleta"
+        $a=rand(0,9);
+        $b=rand(0,9);
+        $c=rand(0,9);
+        $d=rand(0,9);
+        echo "Identificador de su maleta: " . $a . $b . $c . $d;
     }
-    
 }
-
 
     
 
