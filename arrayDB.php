@@ -94,10 +94,11 @@ $vueloHoras=array(
 );
 
 $vueloDivisa=array(
-    array("Divisa" => "Vueling-AE12","Valor" => "0,007576" ),
-    array("Divisa" => "Volotea-EA21","Valor" => "0,877732" ),
-    array("Divisa" => "Iberia-WE44","Valor" => "0,24" ),
-    array("Divisa" => "Ryanair-EW44","Valor" => "0,065" )
+    array("Divisa" => "Yen","Valor" => "0,007576" ),
+    array("Divisa" => "USD","Valor" => "0,877732" ),
+    array("Divisa" => "Sol","Valor" => "0,24" ),
+    array("Divisa" => "Lira","Valor" => "0,065" ),
+    array("Divisa" => "Euro","Valor" => "1" )
 );
 
 $vueloAeropuerto=array(
@@ -116,22 +117,22 @@ $vueloAeropuerto=array(
 );
 
 $vueloPrecio=array(
-    array("Avion" => "Vueling-AE12-Milán","Precio" => "120","Destino" => "Milán" ),
-    array("Avion" => "Volotea-EA21-Roma","Precio" => "90","Destino" => "Roma" ),
-    array("Avion" => "Iberia-WE44-Estambul","Precio" => "200","Destino" => "Estambul" ),
-    array("Avion" => "Ryanair-EW44-Madrid","Precio" => "50","Destino" => "Madrid" ),
-    array("Avion" => "Vueling-ZK87-Lima","Precio" => "1000","Destino" => "Lima" ),
-    array("Avion" => "Volotea-UA21-Milán","Precio" => "70","Destino" => "Bilbao" ),
-    array("Avion" => "Iberia-WH44-Roma","Precio" => "95","Destino" => "Roma" ),
-    array("Avion" => "Ryanair-EL00-Madrid","Precio" => "80","Destino" => "Madrid" ),
-    array("Avion" => "Vueling-AE12-Roma","Precio" => "65","Destino" => "Roma" ),
-    array("Avion" => "Volotea-EA21-Milán","Precio" => "77","Destino" => "Milán" ),
-    array("Avion" => "Iberia-WE44-New York","Precio" => "1200","Destino" => "New York" ),
-    array("Avion" => "Ryanair-EW44-Tokio","Precio" => "1100","Destino" => "Tokio" ),
-    array("Avion" => "Vueling-ZK87-Chicago","Precio" => "1500","Destino" => "Chicago" ),
-    array("Avion" => "Volotea-UA21-París","Precio" => "200","Destino" => "París" ),
-    array("Avion" => "Iberia-WH44-Oporto","Precio" => "45","Destino" => "Oporto" ),
-    array("Avion" => "Ryanair-EL00-Los Ángeles","Precio" => "1700","Destino" => "Los Ángeles" )
+    array("Avion" => "Vueling-AE12-Milán","Precio" => "120","Destino" => "Milán", "Divisa" => "Euro"),
+    array("Avion" => "Volotea-EA21-Roma","Precio" => "90","Destino" => "Roma", "Divisa" => "Euro"),
+    array("Avion" => "Iberia-WE44-Estambul","Precio" => "200","Destino" => "Estambul", "Divisa" => "Lira"),
+    array("Avion" => "Ryanair-EW44-Madrid","Precio" => "50","Destino" => "Madrid", "Divisa" => "Euro"),
+    array("Avion" => "Vueling-ZK87-Lima","Precio" => "1000","Destino" => "Lima", "Divisa" => "Sol"),
+    array("Avion" => "Volotea-UA21-Milán","Precio" => "70","Destino" => "Bilbao", "Divisa" => "Euro"),
+    array("Avion" => "Iberia-WH44-Roma","Precio" => "95","Destino" => "Roma", "Divisa" => "Euro"),
+    array("Avion" => "Ryanair-EL00-Madrid","Precio" => "80","Destino" => "Madrid", "Divisa" => "Euro"),
+    array("Avion" => "Vueling-AE12-Roma","Precio" => "65","Destino" => "Roma", "Divisa" => "Euro"),
+    array("Avion" => "Volotea-EA21-Milán","Precio" => "77","Destino" => "Milán", "Divisa" => "Euro"),
+    array("Avion" => "Iberia-WE44-New York","Precio" => "1200","Destino" => "New York","Divisa" => "USD" ),
+    array("Avion" => "Ryanair-EW44-Tokio","Precio" => "1100","Destino" => "Tokio", "Divisa" => "Yen"),
+    array("Avion" => "Vueling-ZK87-Chicago","Precio" => "1500","Destino" => "Chicago","Divisa" => "USD" ),
+    array("Avion" => "Volotea-UA21-París","Precio" => "200","Destino" => "París", "Divisa" => "Euro"),
+    array("Avion" => "Iberia-WH44-Oporto","Precio" => "45","Destino" => "Oporto","Divisa" => "Euro" ),
+    array("Avion" => "Ryanair-EL00-Los Ángeles","Precio" => "1700","Destino" => "Los Ángeles","Divisa" => "USD" )
 );
 
 ?>

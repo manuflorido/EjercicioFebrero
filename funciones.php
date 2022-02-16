@@ -359,7 +359,7 @@ function totalPasajerosAvion($vueloPasajeros, $id){
 //Empiezo trabajo Febrero
 
 //FUNCIÓN PARA VALIDAR EL PRECIO
-function validaPrecio($vueloPrecio, $dinero, $id, $maleta){
+function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivisa){
     foreach ($vueloPrecio as $preciovuelo) {
         $avion=$preciovuelo["Avion"];
         $precio=$preciovuelo["Precio"];
@@ -372,8 +372,20 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta){
                     echo "El dinero introducido es exacto" . "<br>";
 //SUMAR EL VALOR DE LA MALETA AL TOTAL
                     if ($maleta == "Si") {
-                        echo "Se le sumarán 40€ al importe del billete por facturar su maleta" . "<br>";
-                        echo "Se aplicará un cargo de: " . $precio+40 . "€ a su cuenta bancaria" . "<br>";
+                        $fin=$precio+40;
+//CÓDIGO DE DESCUENTO
+                        if ($codigo=="CESURHAZTEPRO") {
+                            $fin=$fin/1.15;
+                            echo "Código de Descuento activado <br>";                         
+                            
+                        }elseif (empty($codigo)) {
+                            echo "No ha introducido ningún código de descuento" . "<br>";
+                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
+                        }else {
+                            echo "Código no válido" . "<br>";
+                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
+                        }
+                        echo "Se le han sumado 40€ al importe del billete por facturar su maleta" . "<br>";
                     } else {
                         echo "No se le aplicará ningún cargo por maleta" . "<br>";
                     }
@@ -381,29 +393,63 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta){
 //SI SOBRA DINERO
                 if ($precio<$dinero) {
                     $sobra=$dinero-$precio;
-                    echo "El dinero introducido es mayor al precio del vuelo, se devolverán: " . $sobra . "€ a su cuenta<br>";
+                    echo "El dinero introducido es mayor al precio del vuelo, se devolverán " . $sobra . "€ a su cuenta<br>";
 //SUMAR EL VALOR DE LA MALETA AL TOTAL
                     if ($maleta == "Si") {
-                        echo "Se le sumarán 40€ al importe del billete por facturar su maleta" . "<br>";
-                        echo "Se aplicará un cargo de: " . $precio+40 . "€ a su cuenta bancaria" . "<br>";
+                        $fin=$precio+40;
+//CÓDIGO DE DESCUENTO
+                        if ($codigo=="CESURHAZTEPRO") {
+                            $fin=$fin/1.15;
+                            echo "Código de Descuento activado <br>";
+                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
+                        }elseif (empty($codigo)) {
+                            echo "No ha introducido ningún código de descuento" . "<br>";
+                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
+                        }else {
+                            echo "Código no válido" . "<br>";
+                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
+                        }
+                        echo "Se le han sumado 40€ al importe del billete por facturar su maleta" . "<br>";
                     } else {
                         echo "No se le aplicará ningún cargo por maleta" . "<br>";
+                    }
+                    if ($teladedivisa == "Euro") {
+                        $fin=$fin/1;
+                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
+                    }elseif ($teladedivisa == "Yen") {
+                        $fin=$fin/0.007576;
+                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "¥ a su cuenta bancaria" . "<br>";
+                    }elseif ($teladedivisa == "USD") {
+                        $fin=$fin/0.877732;
+                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "$ a su cuenta bancaria" . "<br>";
+                    }elseif ($teladedivisa == "Sol") {
+                        $fin=$fin/0.24;
+                        echo "Se aplicará un cargo de: S/" . number_format($fin, 2) . " a su cuenta bancaria" . "<br>";
+                    }elseif ($teladedivisa == "Lira") {
+                        $fin=$fin/0.065;
+                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "₺ a su cuenta bancaria" . "<br>";
                     }
                 }
 //SI FALTA DINERO
                 elseif ($precio>$dinero) {
                     $falta=$precio-$dinero;
                     echo "El dinero no es suficiente, faltan: " . $falta . "€<br>";
-//SUMAR EL VALOR DE LA MALETA AL TOTAL
-                    if ($maleta == "Si") {
-                        echo "Se le sumarán 40€ al importe del billete por facturar su maleta" . "<br>";
-                        echo "Se aplicará un cargo de: " . $precio+40 . "€ a su cuenta bancaria" . "<br>";
-                    } else {
-                        echo "No se le aplicará ningún cargo por maleta" . "<br>";
-                    }
+                    echo "Inténtelo de nuevo con un importe mayor.";
+                    exit;
                 }
-            }
+//ETO DEBERÍA IR PERO ME ESTOY DANDO CHOCAZOS
+                /*foreach ($vueloDivisa as $divisita) {
+                    $div=$divisita["Divisa"];
+                    $valor=$divisita["Valor"];
+                }
+                if ($div==$divisa) {
+                    echo "El precio en " . $divisa . " es igual a " . $precio/$valor . " " . $divisa;
+                }*/
+          }
+          
+
         }
+       
     }
 
 //CREAR NÚMERO DEL TICKET
