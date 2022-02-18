@@ -67,7 +67,7 @@ $vueloPasajeros=array(
     array("Avion" => "Ryanair-EL00","Pasajeros" => "75" ),
     array("Avion" => "Vueling-AE12","Pasajeros" => "87" ),
     array("Avion" => "Volotea-EA21","Pasajeros" => "97" ),
-    array("Avion" => "Iberia-WE44","Pasajeros" => "81" ),
+    array("Avion" => "Iberia-WE44","Pasajeros" => "97" ),
     array("Avion" => "Ryanair-EW44","Pasajeros" => "75" ),
     array("Avion" => "Vueling-ZK87","Pasajeros" => "87" ),
     array("Avion" => "Volotea-UA21","Pasajeros" => "90" ),
@@ -83,22 +83,22 @@ $vueloPasajeros=array(
 //TRABAJO FINALIZADO 28/01/2022 POR MANUEL FLORIDO
 
 $vueloHoras=array(
-    array("Avion" => "Vueling-AE12","Hora" => "15/03/2022 12:00:00" ),
-    array("Avion" => "Volotea-EA21","Hora" => "16/02/2022 16:30:20" ),
-    array("Avion" => "Iberia-WE44","Hora" => "16/02/2022 15:45:00" ),
-    array("Avion" => "Ryanair-EW44","Hora" => "17/02/2022 18:11:40" ),
-    array("Avion" => "Vueling-ZK87","Hora" => "17/02/2022 12:50:00" ),
-    array("Avion" => "Volotea-UA21","Hora" => "18/02/2022 10:45:30" ),
-    array("Avion" => "Iberia-WH44","Hora" => "19/02/2022 11:20:00" ),
-    array("Avion" => "Ryanair-EL00","Hora" => "20/02/2022 13:57:00" )
-);
-
-$vueloDivisa=array(
-    array("Divisa" => "Yen","Valor" => "0,007576" ),
-    array("Divisa" => "USD","Valor" => "0,877732" ),
-    array("Divisa" => "Sol","Valor" => "0,24" ),
-    array("Divisa" => "Lira","Valor" => "0,065" ),
-    array("Divisa" => "Euro","Valor" => "1" )
+    array("Avion" => "Vueling-AE12-Milán","Hora" => mktime(12,0,0,3,15,2022) ),
+    array("Avion" => "Vueling-AE12-Roma","Hora" => mktime(12,0,0,3,15,2022) ),
+    array("Avion" => "Volotea-EA21-Roma","Hora" => mktime(16,30,20,2,16,2022) ),
+    array("Avion" => "Volotea-EA21-Milán","Hora" => mktime(16,30,20,2,16,2022) ),
+    array("Avion" => "Iberia-WE44-Estambul","Hora" => mktime(15,45,20,2,16,2022) ),
+    array("Avion" => "Iberia-WE44-New York","Hora" => mktime(15,45,20,2,16,2022) ),
+    array("Avion" => "Ryanair-EW44-Madrid","Hora" => mktime(18,11,40,2,17,2022) ),
+    array("Avion" => "Ryanair-EW44-Tokio","Hora" => mktime(18,11,40,2,17,2022) ),
+    array("Avion" => "Vueling-ZK87-Lima","Hora" => mktime(12,50,40,2,17,2022) ),
+    array("Avion" => "Vueling-ZK87-Chicago","Hora" => mktime(12,50,40,2,17,2022) ),
+    array("Avion" => "Volotea-UA21-Milán","Hora" => mktime(10,45,30,2,18,2022) ),
+    array("Avion" => "Volotea-UA21-París","Hora" => mktime(10,45,30,2,18,2022) ),
+    array("Avion" => "Iberia-WH44-Roma","Hora" => mktime(11,20,0,2,19,2022) ),
+    array("Avion" => "Iberia-WH44-Oporto","Hora" => mktime(11,20,0,2,19,2022) ),
+    array("Avion" => "Ryanair-EL00-Madrid","Hora" => mktime(13,57,0,2,20,2022) ),
+    array("Avion" => "Ryanair-EL00-Los Ángeles","Hora" => mktime(13,57,0,2,20,2022) )
 );
 
 $vueloAeropuerto=array(
@@ -117,22 +117,22 @@ $vueloAeropuerto=array(
 );
 
 $vueloPrecio=array(
-    array("Avion" => "Vueling-AE12-Milán","Precio" => "120","Destino" => "Milán", "Divisa" => "Euro"),
-    array("Avion" => "Volotea-EA21-Roma","Precio" => "90","Destino" => "Roma", "Divisa" => "Euro"),
-    array("Avion" => "Iberia-WE44-Estambul","Precio" => "200","Destino" => "Estambul", "Divisa" => "Lira"),
-    array("Avion" => "Ryanair-EW44-Madrid","Precio" => "50","Destino" => "Madrid", "Divisa" => "Euro"),
-    array("Avion" => "Vueling-ZK87-Lima","Precio" => "1000","Destino" => "Lima", "Divisa" => "Sol"),
-    array("Avion" => "Volotea-UA21-Milán","Precio" => "70","Destino" => "Bilbao", "Divisa" => "Euro"),
-    array("Avion" => "Iberia-WH44-Roma","Precio" => "95","Destino" => "Roma", "Divisa" => "Euro"),
-    array("Avion" => "Ryanair-EL00-Madrid","Precio" => "80","Destino" => "Madrid", "Divisa" => "Euro"),
-    array("Avion" => "Vueling-AE12-Roma","Precio" => "65","Destino" => "Roma", "Divisa" => "Euro"),
-    array("Avion" => "Volotea-EA21-Milán","Precio" => "77","Destino" => "Milán", "Divisa" => "Euro"),
-    array("Avion" => "Iberia-WE44-New York","Precio" => "1200","Destino" => "New York","Divisa" => "USD" ),
-    array("Avion" => "Ryanair-EW44-Tokio","Precio" => "1100","Destino" => "Tokio", "Divisa" => "Yen"),
-    array("Avion" => "Vueling-ZK87-Chicago","Precio" => "1500","Destino" => "Chicago","Divisa" => "USD" ),
-    array("Avion" => "Volotea-UA21-París","Precio" => "200","Destino" => "París", "Divisa" => "Euro"),
-    array("Avion" => "Iberia-WH44-Oporto","Precio" => "45","Destino" => "Oporto","Divisa" => "Euro" ),
-    array("Avion" => "Ryanair-EL00-Los Ángeles","Precio" => "1700","Destino" => "Los Ángeles","Divisa" => "USD" )
+    array("Avion" => "Vueling-AE12-Milán","Precio" => "120","Destino" => "Milán","Pasajeros" => "90"),
+    array("Avion" => "Volotea-EA21-Roma","Precio" => "90","Destino" => "Roma","Pasajeros" => "75"),
+    array("Avion" => "Iberia-WE44-Estambul","Precio" => "200","Destino" => "Estambul","Pasajeros" => "100"),
+    array("Avion" => "Ryanair-EW44-Madrid","Precio" => "50","Destino" => "Madrid","Pasajeros" => "60"),
+    array("Avion" => "Vueling-ZK87-Lima","Precio" => "1000","Destino" => "Lima","Pasajeros" => "77"),
+    array("Avion" => "Volotea-UA21-Milán","Precio" => "70","Destino" => "Bilbao","Pasajeros" => "93"),
+    array("Avion" => "Iberia-WH44-Roma","Precio" => "95","Destino" => "Roma","Pasajeros" => "86"),
+    array("Avion" => "Ryanair-EL00-Madrid","Precio" => "80","Destino" => "Madrid","Pasajeros" => "75"),
+    array("Avion" => "Vueling-AE12-Roma","Precio" => "65","Destino" => "Roma","Pasajeros" => "87"),
+    array("Avion" => "Volotea-EA21-Milán","Precio" => "77","Destino" => "Milán","Pasajeros" => "97"),
+    array("Avion" => "Iberia-WE44-New York","Precio" => "1200","Destino" => "New York","Pasajeros" => "97"),
+    array("Avion" => "Ryanair-EW44-Tokio","Precio" => "1100","Destino" => "Tokio","Pasajeros" => "75"),
+    array("Avion" => "Vueling-ZK87-Chicago","Precio" => "1500","Destino" => "Chicago","Pasajeros" => "87"),
+    array("Avion" => "Volotea-UA21-París","Precio" => "200","Destino" => "París","Pasajeros" => "90"),
+    array("Avion" => "Iberia-WH44-Oporto","Precio" => "45","Destino" => "Oporto","Pasajeros" => "84"),
+    array("Avion" => "Ryanair-EL00-Los Ángeles","Precio" => "1700","Destino" => "Los Ángeles","Pasajeros" => "67")
 );
 
 ?>

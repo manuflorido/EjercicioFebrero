@@ -357,6 +357,17 @@ function totalPasajerosAvion($vueloPasajeros, $id){
 //TRABAJO FINALIZADO 28/01/2022 POR MANUEL FLORIDO
 
 //Empiezo trabajo Febrero
+//CREAR NÚMERO DEL TICKET
+function numID($maleta){
+    if ($maleta == "Si") {
+        $a=rand(0,9);
+        $b=rand(0,9);
+        $c=rand(0,9);
+        $d=rand(0,9);
+        echo "Número de maleta: " . $a . $b . $c . $d . "<br>";
+    }
+}
+//$numMaleta=numID($maleta);
 
 //FUNCIÓN PARA VALIDAR EL PRECIO
 function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivisa){
@@ -376,16 +387,18 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivis
 //CÓDIGO DE DESCUENTO
                         if ($codigo=="CESURHAZTEPRO") {
                             $fin=$fin/1.15;
-                            echo "Código de Descuento activado <br>";                         
+                            echo "Código de Descuento activado <br>";
+                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";             
                             
                         }elseif (empty($codigo)) {
                             echo "No ha introducido ningún código de descuento" . "<br>";
-                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
+                            echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";     
                         }else {
                             echo "Código no válido" . "<br>";
                             echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
                         }
                         echo "Se le han sumado 40€ al importe del billete por facturar su maleta" . "<br>";
+                        numID($maleta);
                     } else {
                         echo "No se le aplicará ningún cargo por maleta" . "<br>";
                     }
@@ -410,24 +423,9 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivis
                             echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
                         }
                         echo "Se le han sumado 40€ al importe del billete por facturar su maleta" . "<br>";
+                        numID($maleta);
                     } else {
                         echo "No se le aplicará ningún cargo por maleta" . "<br>";
-                    }
-                    if ($teladedivisa == "Euro") {
-                        $fin=$fin/1;
-                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
-                    }elseif ($teladedivisa == "Yen") {
-                        $fin=$fin/0.007576;
-                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "¥ a su cuenta bancaria" . "<br>";
-                    }elseif ($teladedivisa == "USD") {
-                        $fin=$fin/0.877732;
-                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "$ a su cuenta bancaria" . "<br>";
-                    }elseif ($teladedivisa == "Sol") {
-                        $fin=$fin/0.24;
-                        echo "Se aplicará un cargo de: S/" . number_format($fin, 2) . " a su cuenta bancaria" . "<br>";
-                    }elseif ($teladedivisa == "Lira") {
-                        $fin=$fin/0.065;
-                        echo "Se aplicará un cargo de: " . number_format($fin, 2) . "₺ a su cuenta bancaria" . "<br>";
                     }
                 }
 //SI FALTA DINERO
@@ -445,6 +443,23 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivis
                 if ($div==$divisa) {
                     echo "El precio en " . $divisa . " es igual a " . $precio/$valor . " " . $divisa;
                 }*/
+//SELECCIONAR LA DIVISA Y CAMBIAR EL PRECIO
+                if ($teladedivisa == "Euro") {
+                    $fin=$fin/1;
+                    return "El total en Euros es: " . number_format($fin, 2) . "€";
+                }elseif ($teladedivisa == "Yen") {
+                    $fin=$fin/0.007576;
+                    return "El total en Yenes es: " . number_format($fin, 2) . "¥";
+                }elseif ($teladedivisa == "USD") {
+                    $fin=$fin/0.877732;
+                    return "El total en Dólares es: " . number_format($fin, 2) . "$";
+                }elseif ($teladedivisa == "Sol") {
+                    $fin=$fin/0.24;
+                    return "El total en Soles Peruanos es: S/" . number_format($fin, 2);
+                }elseif ($teladedivisa == "Lira") {
+                    $fin=$fin/0.065;
+                    return "El total en Liras Turcas: " . number_format($fin, 2) . "₺";
+                }
           }
           
 
@@ -452,18 +467,87 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivis
        
     }
 
-//CREAR NÚMERO DEL TICKET
-function numID($maleta){
-    if ($maleta == "Si") {
-        $a=rand(0,9);
-        $b=rand(0,9);
-        $c=rand(0,9);
-        $d=rand(0,9);
-        echo "Identificador de su maleta: " . $a . $b . $c . $d;
+//NOMBRE DEL AEROPUERTO DE DESTINO Y CIUDAD
+function aeroDesti($vueloAeropuerto, $vueloPrecio, $id){
+    foreach ($vueloPrecio as $preciovuelo) {
+        $avion=$preciovuelo["Avion"];
+        if ($avion==$id){
+            $desti=$preciovuelo["Destino"];
+            foreach ($vueloAeropuerto as $airport) {
+                $destinito=$airport["Ciudad"];
+                if ($destinito==$desti) {
+                    $aeropuerto=$airport["Aeropuerto"];
+                    return "Destino: " . $destinito . ", " . $aeropuerto;
+                    
+                }
+            }
+        }
     }
 }
+
+//CIUDAD DESTINO
+function ciuDesti($vueloAeropuerto, $vueloPrecio, $id){
+    foreach ($vueloPrecio as $preciovuelo) {
+        $avion=$preciovuelo["Avion"];
+        if ($avion==$id){
+            $desti=$preciovuelo["Destino"];
+            foreach ($vueloAeropuerto as $airport) {
+                $destinito=$airport["Ciudad"];
+                if ($destinito==$desti) {
+                    return "Ciudad Destino: " . $destinito;
+                    
+                }
+            }
+        }
+    }
+}
+
+
+//FECHA DE SALIDA DE VUELO
+function fechaSalida($vueloHoras, $id){
+    foreach ($vueloHoras as $horas) {
+        $avion=$horas["Avion"];
+        if ($avion==$id){
+            $salida=$horas["Hora"];
+            return "La hora y fecha de salida es: " . date("d/m/Y H:i:s",$salida);
+        }
+    }
+}
+
+//TIEMPO HASTA DESPEGAR
+function tiempoDespegue($vueloHoras, $id, $fechita){
+    foreach ($vueloHoras as $horas) {
+        $avion=$horas["Avion"];
+        if ($avion==$id){
+            $tiempo=$horas["Hora"];
+            $final=($tiempo-$fechita)/3600;
+            return "Quedan " . number_format($final,2) . " horas";
+        }
+    }
+}
+//VIAJEROS EN EL VUELO
+function pasajRes($vueloPrecio, $id){
+    foreach ($vueloPrecio as $preciovuelo) {
+        $avion=$preciovuelo["Avion"];
+        if ($avion==$id){
+            $pasaj=$preciovuelo["Pasajeros"];
+            if ($pasaj>0){
+                $pasaj=$pasaj-1;
+                return "Quedan " . $pasaj. " pasajeros";
+                /*NO FUNCIONA Xd
+                //Esto es para borrar "Pasajeros del array"
+                array_reverse($vueloPrecio);
+                array_shift($vueloPrecio);
+                array_reverse($vueloPrecio);
+                //Esto es para Añadir los pasajeros menos 1
+                array_push($vueloPrecio,$vueloPrecio['Pasajeros']=>$pasaj);
+                */
+            }
+        }
+    }
+}
+
 
     
 
 
-?>

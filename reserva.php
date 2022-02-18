@@ -20,14 +20,40 @@ if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
     echo "Nombre y Apellidos: " . $nombre . " " . $apellidos . "<br>";
     echo "DNI: " . $dni . "<br>";
     echo "Email: " . $correo . "<br>";
-    echo "Dinero depositado: <br>"; 
-    validaPrecio($vueloPrecio, $pago, $vuelo, $maleta, $codigo,$teladedivisa);
-    numID($maleta);
+
+    echo "Dinero depositado: "; 
+    $tela=validaPrecio($vueloPrecio, $pago, $vuelo, $maleta, $codigo, $teladedivisa);
+
+    $aerodesti=aeroDesti($vueloAeropuerto, $vueloPrecio, $vuelo);
+    $fechaSali=fechaSalida($vueloHoras, $vuelo);
+    $ciudesti=ciuDesti($vueloAeropuerto, $vueloPrecio, $vuelo);
+    $tdespegue=tiempoDespegue($vueloHoras, $vuelo, $fechita);
+    $pasajRES=pasajRes($vueloPrecio, $vuelo);
+    $nombreFichero="Billete ";
+    $ext=".txt";
+    $date=date("H-i-m");
+    $res=$nombreFichero.$date.$ext;
+
+    $fichero= fopen("Billetes/$res","a+");
+    if ($fichero == false) {
+    echo "Error no se ha creado";
+    } else {
+    fwrite($fichero,"Bienvenido a su billete SR/SRA: " . $nombre . " " . $apellidos ." con DNI " . $dni . "\r\n");
+    fwrite($fichero,"Salida desde Aeropuerto de Sevilla\r\n");
+    fwrite($fichero,"Fecha de compra: " . date("d/m/Y h:i:s",$fechita) . "\r\n");
+    fwrite($fichero,"$tela\r\n");
+    fwrite($fichero,"$aerodesti\r\n");
+    fwrite($fichero,"$ciudesti\r\n");
+    fwrite($fichero,"$fechaSali\r\n");
+    fwrite($fichero,"$tdespegue\r\n");
+    fwrite($fichero,"$pasajRES\r\n");
+    fflush($fichero);
+    fclose($fichero);
+}
 }
 else {
     echo "Debe especificar un correo válido";
 }
-
 
 
 
