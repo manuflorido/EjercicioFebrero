@@ -1,0 +1,14 @@
+Salida desde Aeropuerto de Sevilla
+Fecha de compra: 15/02/2022 12:00:00
+Destino: Roma Aeropuerto: Aeropuerto Roma-Fiumicino<br>
+
+La hora y fecha de salida es: 16/02/2022 16:30:20<br>
+Quedan 28.51 horas<br>
+Quedan 74 pasajeros<br>
+Salida desde Aeropuerto de Sevilla
+Fecha de compra: 15/02/2022 12:00:00
+Destino: Roma Aeropuerto: Aeropuerto Roma-Fiumicino<br>
+Ciudad Destino: Roma<br>
+La hora y fecha de salida es: 16/02/2022 16:30:20<br>
+Quedan 28.51 horas<br>
+Quedan 74 pasajeros<br>
