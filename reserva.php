@@ -14,7 +14,8 @@ $teladedivisa=$_POST["teladedivisa"];
 $fechita=mktime(12,0,0,2,15,2022);
 
 if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-    echo "Felicidades su billete se ha creado correctamente <br><br>";
+    echo "Billete generado, puede observarlo cuando quiera: <br><br>";
+    echo "Datos de su compra: <br>";
     echo "Fecha de compra: " . date("d/m/Y h:i:s",$fechita) . "<br>";
     echo "Vuelo y Destino: " . $vuelo . "<br>";
     echo "Nombre y Apellidos: " . $nombre . " " . $apellidos . "<br>";

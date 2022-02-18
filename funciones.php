@@ -398,7 +398,7 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivis
                             echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
                         }
                         echo "Se le han sumado 40€ al importe del billete por facturar su maleta" . "<br>";
-                        numID($maleta);
+                        return numID($maleta);
                     } else {
                         echo "No se le aplicará ningún cargo por maleta" . "<br>";
                     }
@@ -423,6 +423,7 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivis
                             echo "Se aplicará un cargo de " . number_format($fin, 2) . "€ a su cuenta bancaria" . "<br>";
                         }
                         echo "Se le han sumado 40€ al importe del billete por facturar su maleta" . "<br>";
+                        echo "Guarde el número de su maleta, por favor <br>";
                         numID($maleta);
                     } else {
                         echo "No se le aplicará ningún cargo por maleta" . "<br>";
@@ -445,19 +446,19 @@ function validaPrecio($vueloPrecio, $dinero, $id, $maleta, $codigo, $teladedivis
                 }*/
 //SELECCIONAR LA DIVISA Y CAMBIAR EL PRECIO
                 if ($teladedivisa == "Euro") {
-                    $fin=$fin/1;
+                    $fin=$precio/1;
                     return "El total en Euros es: " . number_format($fin, 2) . "€";
                 }elseif ($teladedivisa == "Yen") {
-                    $fin=$fin/0.007576;
+                    $fin=$precio/0.007576;
                     return "El total en Yenes es: " . number_format($fin, 2) . "¥";
                 }elseif ($teladedivisa == "USD") {
-                    $fin=$fin/0.877732;
+                    $fin=$precio/0.877732;
                     return "El total en Dólares es: " . number_format($fin, 2) . "$";
                 }elseif ($teladedivisa == "Sol") {
-                    $fin=$fin/0.24;
+                    $fin=$precio/0.24;
                     return "El total en Soles Peruanos es: S/" . number_format($fin, 2);
                 }elseif ($teladedivisa == "Lira") {
-                    $fin=$fin/0.065;
+                    $fin=$precio/0.065;
                     return "El total en Liras Turcas: " . number_format($fin, 2) . "₺";
                 }
           }
@@ -546,7 +547,7 @@ function pasajRes($vueloPrecio, $id){
         }
     }
 }
-
+?>
 
     
 
